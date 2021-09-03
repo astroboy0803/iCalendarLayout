@@ -11,6 +11,7 @@
 		756C2E9726E1A96D00F1ED79 /* StickyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756C2E9626E1A96D00F1ED79 /* StickyCollectionViewController.swift */; };
 		756C2E9C26E1A96E00F1ED79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 756C2E9B26E1A96E00F1ED79 /* Assets.xcassets */; };
 		756C2E9F26E1A96E00F1ED79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 756C2E9D26E1A96E00F1ED79 /* LaunchScreen.storyboard */; };
+		756C2EA726E1B01900F1ED79 /* StickyCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756C2EA626E1B01900F1ED79 /* StickyCollectionViewLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		756C2E9B26E1A96E00F1ED79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		756C2E9E26E1A96E00F1ED79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		756C2EA026E1A96E00F1ED79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		756C2EA626E1B01900F1ED79 /* StickyCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyCollectionViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				756C2E9226E1A96D00F1ED79 /* AppDelegate.swift */,
 				756C2E9626E1A96D00F1ED79 /* StickyCollectionViewController.swift */,
+				756C2EA626E1B01900F1ED79 /* StickyCollectionViewLayout.swift */,
 				756C2E9B26E1A96E00F1ED79 /* Assets.xcassets */,
 				756C2E9D26E1A96E00F1ED79 /* LaunchScreen.storyboard */,
 				756C2EA026E1A96E00F1ED79 /* Info.plist */,
@@ -130,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				756C2EA726E1B01900F1ED79 /* StickyCollectionViewLayout.swift in Sources */,
 				756C2E9726E1A96D00F1ED79 /* StickyCollectionViewController.swift in Sources */,
 				756C2E9326E1A96D00F1ED79 /* AppDelegate.swift in Sources */,
 			);
