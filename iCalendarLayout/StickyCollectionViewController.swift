@@ -10,12 +10,18 @@ import UIKit
 public final class StickyCollectionViewController: UIViewController {
     
     private let collectionView: UICollectionView
+    
+    private let flowLayout: StickyCollectionViewLayout
         
-    private var sections: Int = 100
-    private var columns: Int = 100
-        
+    private var sections: Int = 20
+    private var columns: Int = 20
+    
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        collectionView = .init(frame: .zero, collectionViewLayout: StickyCollectionViewLayout())
+        let stickyFlowLayout: StickyCollectionViewLayout = .init()
+        stickyFlowLayout.stickyRowsCount = 1
+        stickyFlowLayout.stickyColumnsCount = 1
+        flowLayout = stickyFlowLayout
+        collectionView = .init(frame: .zero, collectionViewLayout: stickyFlowLayout)
         super.init(nibName: nil, bundle: nil)
         setupLayout()
         setupCollectionView()
@@ -51,9 +57,8 @@ public final class StickyCollectionViewController: UIViewController {
     
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        // test reload will call prepare
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//            self.sections = 10
-//            self.columns = 100
 //            self.collectionView.reloadData()
 //        }
     }
@@ -73,7 +78,23 @@ extension StickyCollectionViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarCell.reuseID, for: indexPath)
         
         if let calendarCell = cell as? CalendarCell {
-            calendarCell.label.text = "\(indexPath)"
+            var text = ""
+            
+            let count = 1
+            for idx in 0..<count {
+                text += "\(indexPath)"
+                if idx < count - 1 {
+                    text += "\n"
+                }
+            }
+            
+            calendarCell.label.text = text
+        }
+        
+        if flowLayout.isItemSticky(at: indexPath) {
+            cell.backgroundColor = .systemGray
+        } else {
+            cell.backgroundColor = .systemOrange
         }
 
         return cell
